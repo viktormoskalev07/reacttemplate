@@ -1,0 +1,56 @@
+.nav{
+    position: absolute;
+    display: flex;
+    top:$header-height;
+   &__btn{
+       
+        height: 50px;
+        width: 50px;
+        background-color: rgb(206, 73, 73);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        &__line{
+            height: 4px;
+            width: 100%;
+            background-color: $text-color;
+            
+        }
+   }
+
+    @include sm{
+        position: static;
+        
+    }
+
+    &__item{
+        display: block;
+        padding: 15px;
+
+        color:$text-color;
+        text-decoration: none;
+        &:focus , &:visited{
+            color:$text-color;
+        }
+    }
+}
+
+.nav-open{
+    .nav{
+       &__btn{
+       &__line {
+            &:nth-child(1){
+                transform: translateY(12px);
+            }
+            &:nth-child(3){
+                transform: translateY(-12px);
+            }
+            &:nth-child(2){
+                transform: translateY(-12px);
+            }
+       } 
+    }
+    }
+}
