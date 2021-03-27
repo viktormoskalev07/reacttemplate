@@ -1,21 +1,16 @@
-$header-height:60px;
+$header-height:80px;
  
 .header{
     background-color: $bgc;
-    height:$header-height ;
- 
-    @include sm{
-        min-height: 60px;
-    }
-
+    padding: 10px;
+    min-height: $header-height;
+    justify-content: space-between; align-items: center; flex-wrap: wrap;
     display: flex;
-    align-items: center;
-    
-
     &__content{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; align-items: center; flex-wrap: wrap;
         align-items: center;
         height: 100%;
+        flex-wrap: wrap;
     }
 }

@@ -1,54 +1,119 @@
+$nlh:4px;
+$btnh:50px;
 .nav{
-    position: absolute;
-    display: flex;
     top:$header-height;
-   &__btn{
-       
-        height: 50px;
-        width: 50px;
-        background-color: rgb(206, 73, 73);
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        &__line{
-            height: 4px;
-            width: 100%;
-            background-color: $text-color;
-            
-        }
-   }
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    bottom:0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+     
 
-    @include sm{
-        position: static;
-        
-    }
 
     &__item{
+      
+        transition:transform 0.3s;
+        &:nth-child(odd){
+            transform: translateX(-110%);
+        }
+        &:nth-child(even){
+            transform: translateX(110%);
+        }
+        background-color: $bgc;
+        &:hover{
+            background-color:lighten($bgc, 5%);
+        }
         display: block;
         padding: 15px;
-
+        text-align: center;
+        margin-top: 10px;
         color:$text-color;
         text-decoration: none;
         &:focus , &:visited{
             color:$text-color;
         }
+        @include mobile-md {
+            font-size: 14px;
+            transform: none !important;
+            margin: 0 !important;
+        }
+        @include tablet {
+            font-size: 16px;
+ 
+        }
+        @include desktop-sm {
+            font-size: 18px;
+ 
+        }
+  
     }
+    &__btn{
+        cursor: pointer;
+        height: $btnh;
+        width: $btnh;
+        &:hover{
+            .nav__btn__line:nth-child(2){
+                width: 100%;
+            }
+        }
+        padding:0 5px;
+    
+        &__line{
+            &:nth-child(2){
+                width: 70%;
+                margin-left: auto;
+            }
+            transition: 0.3s;
+            height: $nlh;
+            width: 100%;
+            background-color: $text-color;
+            margin-top: $btnh / 4 - $nlh*3/4;
+        
+        }
+   }
+   
+   @include mobile-md{
+    
+    pointer-events: all;
+    position: static;
+    display: flex;  
+    flex-direction: row;
+    &__btn{
+  pointer-events: none;
+  opacity: 0;
+  height: 0  ;
+
+    }
+}
 }
 
 .nav-open{
     .nav{
+        cursor: pointer;
+        pointer-events: all;
+        background-color: rgba(201, 201, 201, 0.801);
+        display: flex;
+  
+        &__item{
+           
+        transform: none;
+    }
+        
        &__btn{
        &__line {
             &:nth-child(1){
-                transform: translateY(12px);
+               
+                transform: translateY( $btnh / 4+$nlh/4) rotate(-45deg);
             }
             &:nth-child(3){
-                transform: translateY(-12px);
+                transform: translateY( -$btnh / 4 - $nlh/4) rotate(45deg);
+                
             }
             &:nth-child(2){
-                transform: translateY(-12px);
+                opacity: 0;
+                transform:rotate(90deg) scale(0);
             }
        } 
     }

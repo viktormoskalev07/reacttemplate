@@ -1,12 +1,12 @@
-const Nav = () => {
+const Nav = (p) => {
     return (
-   <nav className="nav">
+   <nav onClick={()=>p.setNavstate()} className="nav">
        <a href="./" className="nav__item"> main</a>
        <a href="./" className="nav__item"> main</a>
        <a href="./" className="nav__item"> main</a>
        <a href="./" className="nav__item"> main</a>
-       <a href="./" className="nav__item"> main</a>
-      
+       <a href="./" className="nav__item"> main</a>    
+
    </nav>
       );
 }

@@ -9,11 +9,14 @@ function App() {
   return (
  
  
-  <>
- <Header/>
+<div className="wrapper">
+
+<Header/>
 <Main/>
 <Footer/>
-  </>
+ 
+
+</div> 
 
 
    

@@ -1,0 +1,52 @@
+.footer{
+  text-align: center;
+background-color: $bgc;
+  padding: 30px 0;
+}
+
+.contact-list{
+
+     &__item{
+          margin: 15px;
+         margin-bottom:10px;
+        a{
+           font-weight: 600;
+            transition: 0.3s;
+            display: block;
+            &:visited , &{
+                color:$text-color;
+                text-decoration: none;
+            }
+            &:hover ,&:focus{
+                color:darken($text-color,20%);
+               transform: scale(1.2);
+            }
+        }
+         svg{
+             height: 25px;
+            
+             background-color:$bgc;
+             fill:$text-color;
+             &:hover{
+                 fill: darken($text-color,30%);
+             }
+         }
+     }
+
+    
+}
+
+.social-list{
+
+    @include mobile-sm{
+        max-width: 200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .contact-list__item{
+          margin: 15px;
+        }
+    }
+
+}

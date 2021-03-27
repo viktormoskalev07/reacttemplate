@@ -6,7 +6,10 @@ const main = () => {
     return ( 
  <>
 
-<Mainpage/>
+        <main className="main">
+        <Mainpage/>
+        </main>
+
 
 
  </>
