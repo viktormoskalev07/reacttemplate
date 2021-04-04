@@ -1,6 +1,6 @@
  
 import Section from '../section/section';
-import img1 from '../../../img/slider/1.jpg';
+import img1 from '../../../img/slider/2.jpg';
 
 const p = () => {
     const s1= {

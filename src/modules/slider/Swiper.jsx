@@ -26,10 +26,10 @@ SwiperCore.use([    Autoplay]);
       slidesPerView={1}
     >
  
-      <SwiperSlide>  <Slide img={img1} /></SwiperSlide>
+      <SwiperSlide>  <Slide img={img4} /></SwiperSlide>
       <SwiperSlide>  <Slide img={img2} /></SwiperSlide>
       <SwiperSlide>  <Slide img={img3} /></SwiperSlide>
-      <SwiperSlide>  <Slide img={img4} /></SwiperSlide>
+      <SwiperSlide>  <Slide img={img1} /></SwiperSlide>
  
       ...
     </Swiper>
