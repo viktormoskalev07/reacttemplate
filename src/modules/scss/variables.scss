@@ -1,7 +1,13 @@
 $text-color:white;
 $bgc:#464646;
-$contrast-bcg:rgb(212, 212, 212);
-$contrast-color:rgb(3, 0, 43);
+ 
+
+//sections
+$dark: #C4C4C4;
+$light:#fafafa ;
+$dark-text:black;
+$grey-text:rgb(61, 60, 66);
+
 $mobile-sm: 320px;
 $mobile-md: 425px;
 $mobile-lg: 576px;
@@ -17,7 +23,7 @@ $wide-screen-lg: 1599px;
   @media (min-width: $mobile-sm) {
     @content;
   }
-}
+} 
 
 /* mobile-md */
 @mixin mobile-md {

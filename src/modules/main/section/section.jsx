@@ -1,14 +1,36 @@
-const section = () => {
+const section = (s) => {
+    const ob =s.content;
+    let title="";
+    let img="p";
+    let desc="";
+    let imgalt="";
+    let propClass="";
+    
+    if(ob){
+        title = ob.title;
+        img = ob.img;
+        desc = ob.desc;
+        imgalt = ob.imgalt;
+    }
+    if(s.className){
+        propClass=s.className;
+        }
+
+ 
+  
     return (
-            <section className="section">
-                <h2 className="section-title">title</h2>
+
+            <section className={propClass+" section"}>
+                <div className="container">
+                <h2 className="section__title">{title}</h2>
                 <div className="row">
                     <div className="col-md-6">
-                        <figure className="section-image"><img src="" alt=""/></figure>
+                        <figure className="section__image"><img src={img} alt={imgalt}/></figure>
                     </div>
                     <div className="col-md-6">
-                        <p className="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsum, ullam ducimus dolores, aspernatur explicabo eum suscipit doloremque voluptates expedita excepturi placeat temporibus est reprehenderit eligendi amet nemo id. Aperiam eligendi expedita quos?</p>
+                        <p className="section__description"> {desc}</p>
                     </div>
+                </div>
                 </div>
             </section>
     );

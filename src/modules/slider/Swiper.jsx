@@ -16,17 +16,14 @@ import 'swiper/swiper.scss';
 // install Swiper modules
 SwiperCore.use([    Autoplay]);
 
-export default () => {
-const i1="https://www.gastronom.ru/binfiles/images/20200713/m02dad0a.jpg"
-
-
+ const s = () => {
+ 
   return (
-    <Swiper
+    <Swiper className="hero-slide"
       spaceBetween={50}
      
         autoplay={{delay:3300}}
       slidesPerView={1}
- 
     >
  
       <SwiperSlide>  <Slide img={img1} /></SwiperSlide>
@@ -38,3 +35,5 @@ const i1="https://www.gastronom.ru/binfiles/images/20200713/m02dad0a.jpg"
     </Swiper>
   );
 };
+
+export default s

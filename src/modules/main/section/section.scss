@@ -1,0 +1,28 @@
+
+
+
+.section{
+    color:$dark-text;
+    // background-color: $dark;
+    padding: 20px 10px;
+ 
+    @include desktop-sm{
+        padding: 40px 10px;
+    }
+    &__title{
+        font-size: 2em;
+        margin-bottom: 1em;
+        margin-top: 5px;
+    }
+    &__description{
+        font-size: 1em;
+    }
+    &--light{
+        color:$dark-text;
+        background-color:$light;
+    }
+    &__image{
+        width: 100%;
+        object-fit: cover;
+    }
+}

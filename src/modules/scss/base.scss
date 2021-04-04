@@ -5,6 +5,11 @@ html, body ,figure,ul{
 }
 body{
     color:$text-color;
+    background-color: rgb(145, 65, 65);
+}
+img{
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .container{
