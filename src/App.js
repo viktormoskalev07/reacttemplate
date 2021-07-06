@@ -13,12 +13,14 @@ import Footer from './modules/footer/footer.jsx';
 import Mainpage from './modules/main/pages/Mainpage';
 import Page1 from './modules/main/pages/page1';
 import Page2 from './modules/main/pages/page2';
+import Testwppage from './modules/main/pages/Test-wp-page';
  
 function App() {
     const nav = {
       "main": ["Main Page" , Mainpage],
       "page1": [" Page1" , Page1],
-      "page2": [" Page2" , Page2]
+      "page2": [" Page2" , Page2],
+      "Test-wp-page": [" Test-wp-page" , Testwppage]
       
     }
  

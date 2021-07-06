@@ -8,15 +8,20 @@ const Mainppage = () => {
         "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora laborum ad velit possimus, corrupti vero.",
         "img": img1,
         "imgalt": "img"
-    }
+    }; 
     return (  
         <>
         <section className="hero">
             <div className="container">
-                       <h1 className="hero__title"> Lorem ipsum dolor sit amet.</h1>
+                       <h1 className="hero__title"> react</h1>
                         </div>
                         <Swiper className="hero-slide"/>
            
+        </section>
+
+        <section>
+   
+
         </section>
         <Section  content={s1} className="section--light"/>
         <Section  content={s1}/>
