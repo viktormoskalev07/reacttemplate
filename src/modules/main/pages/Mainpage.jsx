@@ -18,11 +18,7 @@ const Mainppage = () => {
                         <Swiper className="hero-slide"/>
            
         </section>
-
-        <section>
-   
-
-        </section>
+ 
         <Section  content={s1} className="section--light"/>
         <Section  content={s1}/>
         <Section content={s1} className="section--light"/>

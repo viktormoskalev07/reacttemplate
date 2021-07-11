@@ -2,7 +2,7 @@
 import './modules/scss/main.scss';
 import 'normalize.css'; // Note this
  
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
  
-    <HashRouter basename='/'>
+    <BrowserRouter basename='/'>
 <div className="wrapper">
 
 <Header nav={nav}/>
@@ -44,7 +44,7 @@ function App() {
 
  
 
-</HashRouter>
+</BrowserRouter>
 
   );
 }

@@ -1,16 +1,35 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import InnerHtml from '../../../tools/InnerHtml';
 
- 
+ import styled from 'styled-components';
+ const PostItem= styled.div`
+ width: 33%;
+ min-height: 400px;
+ padding: 10px;
+ border-radius: 20px;
+ background-color: #dadada;
+ color:black;
+ background-clip:content-box;
+  
+ ` 
+
 
 const P = () => {
         const [Getposts, setPosts] =useState([])
+        const [Getmedia, setMedia] =useState([])
      
     useEffect(() => {
         fetch(`http://wp-server.h67359oy.beget.tech/wp-json/wp/v2/posts`)
         .then((response) => response.json())
         .then((posts) => {
                 setPosts(posts);
-                console.log(posts)
+               
+        })
+        fetch(`http://wp-server.h67359oy.beget.tech/wp-json/wp/v2/media`)
+        .then((response) => response.json())
+        .then((media) => {
+                setMedia(media);
+               
         })
         return () => {
              
@@ -18,35 +37,40 @@ const P = () => {
 
     }, [ ])
 
-    const innr= (item)=>{
-        return(
-           ` <div dangerouslySetInnerHTML={__html: item} />`
-        )
+    if(Getposts.length>1){
+        console.log('post' ,Getposts);
+        console.log(Getmedia);
     }
+    
 
     return (  
         <>  
                  <section className='container'>
                     <h1> react in wp</h1>
-                    {/* <h2> {post.title?post.title.rendered:'loading...'} </h2> */}
-                    <div className='container'>
-                    {/* */}
-                    </div>
+     
+                    <div style={{display:'flex',flexWrap:'wrap'}} className='container'>
                     {Getposts.map((post)=>{
                         return(
-                            <div  key={post.id} style={{border:'solid blue 1px' , height:'300px', width:'300px'}}> 
-                                        <h1> {post.title.rendered}</h1>
-                                        <div>  ${post.content.rendered}</div>
-                                        <i> дата создания ${post.date}</i>
-                                        {innr(1)}
+                            <PostItem  key={post.id}> 
+                            <div style={{padding:'40px'}}>
+                            <h1> {post.title.rendered}</h1> 
+                                        <i> дата создания  {post.date}</i>
+                                        <InnerHtml   content={post.excerpt.rendered} />
+
                             </div>
+                                      
+                            </PostItem>
                         
                           
                         )
                     })}
+                    </div>
+                 
                     </section>
             </>
     );
 }
  
 export default P;
+
+

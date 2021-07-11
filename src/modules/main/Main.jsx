@@ -1,28 +1,40 @@
+import { useState } from "react";
 import { Route, Switch   } from "react-router-dom";
-import P404 from './pages/Mainpage'
+import Mainppage from "./pages/Mainpage";
+import P404 from './pages/P404'
+import Post from "./pages/Post";
 
-const main = (n) => {
-const nav = n.nav ;
-const keynaw = Object.keys(nav);
-let keys=0;
-const rout = keynaw.map((k) =>{
-            let l = nav[k][1]();
-            keys++;
-            return <Route exact key={keys} path={"/"+k}> {l} </Route> 
-} ); 
+const Main = ({nav}) => { 
+const keynaw = Object.keys(nav); 
+const PagesFromProps =()=>{
+            return(
+               keynaw.map((k ,i) =>{ 
+                let Page = nav[k][1]; 
+                console.log(nav[k])
+                return <Route exact key={i} path={"/"+k}> <Page/></Route> 
+                } )
+            )
 
+}  
  
-return (
-    
+ const[getDisable , setDisable]= useState(false);
+return ( 
     <main className="main">
 
+                <button disabled={getDisable} onClick={()=>{
+                   setDisable(true)
+                }}>   test</button>
     <Switch>
-        {rout}
-        <Route    path="/"> <P404 /></Route> 
+      <Route  exact  path="/"> <Mainppage /></Route>  
+        <PagesFromProps/>
+        <Route    path="/post/"> <Post/></Route>  
+        <Route > <P404 /></Route> 
+       
+       
     </Switch>
     </main>
 
     );
     }
 
-    export default main;
+    export default Main;
